@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Dino Runner — Android</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Photo Gallery</h1>
+    </header>
+
+    <!-- Overlay shown when site is opened locally; replace host URL in README and below -->
+    <div id="onlineOnlyOverlay" class="online-only" aria-hidden="true">
+      <div class="online-only-inner">
+        <h2>Site available online only</h2>
+        <p>This site is intended to be viewed from a hosted URL rather than opened locally.</p>
+        <p><a id="hostUrl" href="#">Visit the hosted site</a></p>
+      </div>
+    </div>
+
+    <section id="gallery" class="gallery">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-grid">
+        <figure class="thumb" data-index="0">
+          <img src="image/first.jpg" alt="First image">
+          <figcaption>First</figcaption>
+        </figure>
+        <figure class="thumb" data-index="1">
+          <img src="image/second.jpeg" alt="Second image">
+          <figcaption>Second</figcaption>
+        </figure>
+        <figure class="thumb" data-index="2">
+          <img src="image/third.jpg" alt="Third image">
+          <figcaption>Third</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+      <button class="lb-close" aria-label="Close">&times;</button>
+      <button class="lb-prev" aria-label="Previous">‹</button>
+      <div class="lb-content">
+        <img id="lightboxImg" src="" alt="">
+        <div id="lbCaption" class="lb-caption"></div>
+      </div>
+      <button class="lb-next" aria-label="Next">›</button>
+    </div>
+
+    <!-- Game removed — gallery only -->
+    <div class="birthday-cta" style="text-align:center;margin:18px 0">
+      <a href="birthday.html" class="btn">Open a surprise 🎉</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

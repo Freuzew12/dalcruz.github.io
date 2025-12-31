@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.dinorunner",
+  "appName": "Dino Runner",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

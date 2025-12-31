@@ -1,0 +1,62 @@
+/* Mobile-first styles for Dino Runner */
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:#f7f7f7;color:#111}
+.wrap{max-width:900px;margin:0 auto;padding:12px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+header h1{font-size:18px;margin:0}
+.score{font-weight:600}
+canvas{display:block;background:#f7f7f7;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.08);width:100%;height:240px}
+.controls{margin-top:8px;color:#555;font-size:13px}
+@media(min-width:600px){canvas{height:300px}}
+
+/* Gallery styles */
+.gallery{margin:16px 0}
+.gallery h2{font-size:16px;margin:8px 0}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.gallery-grid .thumb{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);cursor:pointer;display:flex;flex-direction:column}
+.gallery-grid .thumb img{display:block;width:100%;height:120px;object-fit:cover}
+.gallery-grid .thumb figcaption{padding:8px 10px;font-size:13px;color:#333}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);visibility:hidden;opacity:0;transition:opacity .18s ease,visibility .02s}
+.lightbox.open{visibility:visible;opacity:1}
+.lb-content{max-width:92vw;max-height:86vh;display:flex;flex-direction:column;align-items:center}
+.lb-content img{max-width:100%;max-height:78vh;border-radius:6px}
+.lb-caption{margin-top:8px;color:#fff;font-size:14px;text-align:center}
+.lb-close,.lb-prev,.lb-next{position:absolute;background:transparent;border:none;color:#fff;font-size:30px;padding:8px;cursor:pointer}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+@media(min-width:600px){.gallery-grid .thumb img{height:140px}}
+
+/* Hover / focus "pop" animation for thumbnails */
+.gallery-grid .thumb{transition:transform .16s cubic-bezier(.2,.9,.3,1),box-shadow .16s ease;transform-origin:center center}
+.gallery-grid .thumb:hover,.gallery-grid .thumb:focus-visible{transform:scale(1.04);box-shadow:0 8px 20px rgba(0,0,0,0.16)}
+.gallery-grid .thumb:active{transform:scale(0.995)}
+
+@keyframes pop-bounce{
+	0%{transform:scale(1)}
+	28%{transform:scale(1.08)}
+	48%{transform:scale(0.99)}
+	100%{transform:scale(1.04)}
+}
+
+/* Optional utility: apply a short bounce when entering via keyboard or programmatically */
+.thumb-pop { animation: pop-bounce .32s cubic-bezier(.2,.9,.3,1) }
+
+/* Button (CTA) styles */
+.btn{display:inline-block;background:#ff6b6b;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 6px 18px rgba(255,107,107,0.18);transition:transform .14s ease,box-shadow .14s ease}
+.btn:hover,.btn:focus{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 28px rgba(255,107,107,0.22)}
+.btn:active{transform:translateY(-1px) scale(0.995)}
+
+/* Birthday page specifics */
+.birthday-page{min-height:70vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:40px}
+.birthday-page h1{font-size:48px;color:#ff4d6d;margin:0 0 10px}
+.birthday-page p{font-size:18px;color:#333;margin:0}
+
+/* Online-only overlay */
+.online-only{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.82);visibility:hidden;opacity:0;transition:opacity .18s ease,visibility .02s;z-index:1200}
+.online-only.open{visibility:visible;opacity:1}
+.online-only-inner{background:#fff;color:#222;padding:26px 28px;border-radius:12px;max-width:520px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,0.28)}
+.online-only-inner h2{margin:0 0 8px;font-size:22px;color:#ff4d6d}
+.online-only-inner p{margin:8px 0}
+.online-only-inner a{color:#ff6b6b;font-weight:700;text-decoration:none}
